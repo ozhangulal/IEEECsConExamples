@@ -1,0 +1,27 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Duzenle</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container"> 
+        <form role="form" method="post" action="/Home/Guncelle">
+            <input name="ID" value="@Model.ID" class="text-hide"/>
+            <input name="Name" value="@Model.Name" class="form-control"/>
+            <input name="Surname" value="@Model.Surname" class="form-control"/>
+            <input name="Age" value="@Model.Age" class="form-control"/>
+            <div class="text-right">
+                <button class="btn btn-info">Update</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

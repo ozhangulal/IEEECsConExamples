@@ -1,0 +1,31 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>YeniOlustur</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <h2>Add New Member!</h2>
+        </div>
+        <div class="col-lg-6 col-sm-12">
+            <form role="form" action="/Account/Ekle" method="post">
+                <input name="Name" class="form-control" placeholder="enter Name"/>
+                <input name="Password" class="form-control" placeholder="enter Password"/>
+                <input name="Email" class="form-control" placeholder="enter Email"/>
+                <div class="text-right">
+                    <button type="submit" class="btn btn-info">Add Member!</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>List</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container" style="margin-top:40px">
+        <h2>Student List</h2>
+    </div>
+    <div class="row" style="margin:10px">
+        <a class="btn btn-success" href="/Home/YeniOlustur">Add New Student</a>
+    </div>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Name:</th>
+                <th>Surname:</th>
+                <th>Age:</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Surname</td>
+                    <td>@item.Age</td>
+                    <td>
+                        <a class="btn btn-warning" href="/Home/Duzenle/@item.ID">Edit</a>
+                        <a class="btn btn-danger" href="/Home/Sil/@item.ID">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>

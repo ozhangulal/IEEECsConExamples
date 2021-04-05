@@ -1,0 +1,37 @@
+﻿
+@{
+    Layout = null;
+}
+@using MVCObjectTransfer.Models
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        @*@ViewBag.Ogrenci.Id<br />
+        @ViewBag.Ogrenci.Name<br />
+        @ViewBag.Ogrenci.Surname<br />*@
+        @*@ViewBag.Ogrenci*@
+
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Name:</th>
+                <th>Surname:</th>
+            </tr>
+            @foreach (Student item in (List<Student>)ViewBag.ogrenciler)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                    <td>@item.Surname</td>
+                </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>

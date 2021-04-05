@@ -1,0 +1,62 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>login</title>
+    <style type="text/css">
+
+        table tr td 
+        {
+            padding: 5px;
+            font-size: 16px;
+        }
+
+            table tr td #txtKullaniciAdi, .txtSifre 
+            {
+                width:200px;
+                height:30px;
+                font-size:24px;
+            }
+            table tr td #btnGiris 
+            {
+                padding:5px;
+                font-size:24px;
+            }
+
+    </style>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm())
+        {
+            <table>
+                <tr>
+                    <td>Kullanici Adi:</td>
+                    <td>@Html.TextBox("txtKullaniciAdi", "",new { @id="txtKullaniciAdi"}) </td>
+                </tr>
+                <tr>
+                    <td>Sifre:</td>
+                    <td>@Html.Password("txtSifre", "", new { @class="txtSifre"})</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="Giris", id="btnGiris"/>
+                    </td>
+                </tr>
+            </table>
+        }
+
+        @if (!String.IsNullOrEmpty(ViewBag.userName) && (!String.IsNullOrEmpty(ViewBag.Password)))
+        {
+            Response.Write("Kullanici Adi:" + ViewBag.userName + "</br>Sifre:" + ViewBag.Password);
+        }
+
+    </div>
+</body>
+</html>
